@@ -1,9 +1,10 @@
 android {
     signingConfigs {
         release {
-            keyAlias 'GDXRPG'
-            keyPassword 'GDXRPG'
-            storePassword 'GDXRPG'
+            keyAlias 'gdxrpg1'
+            keyPassword 'gdxrpg1'
+            storePassword 'gdxrpg1'
+            storeFile file('C:/Data/code/LibGdx/GDX-RPG/GDX-RPG/gdxrpg1.jks')
         }
     }
     buildToolsVersion '24.0.2'
