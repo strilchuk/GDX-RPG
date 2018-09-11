@@ -1,4 +1,11 @@
 android {
+    signingConfigs {
+        release {
+            keyAlias 'GDXRPG'
+            keyPassword 'GDXRPG'
+            storePassword 'GDXRPG'
+        }
+    }
     buildToolsVersion '24.0.2'
     compileSdkVersion 22
     sourceSets {
@@ -14,7 +21,6 @@ android {
 
         instrumentTest.setRoot('tests')
     }
-
     lintOptions {
         abortOnError false
     }
@@ -22,8 +28,17 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
-
+    defaultConfig {
+        //signingConfig signingConfigs.release
+    }
+    productFlavors {
+    }
+    buildTypes {
+        release {
+            debuggable true
+            signingConfig signingConfigs.release
+        }
+    }
 }
 // called every time gradle gets executed, takes the native dependencies of
 // the natives configuration, and extracts them to the proper libs/ folders
